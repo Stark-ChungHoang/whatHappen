@@ -1,0 +1,57 @@
+.intro {
+    --height: 576px;
+    --marginTop: 50px;
+    background-image: url("../../img/introduction-bg.png");
+    height: var(--height);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $clHeader;
+        &__content {
+            max-width: 1532px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            padding:0 30px;
+              h5 {
+                  font-size: $fsH5Info;
+                  line-height: 1.2;
+                  letter-spacing: 5px;
+                  text-transform: uppercase;
+                  font-weight: bold;
+              }
+              p {
+                  margin-top: var(--marginTop);
+                  font-size: $fsP-info;
+                  line-height: 1.3;
+                  font-weight: normal;
+                  opacity: 0.9;
+                  max-width: 670px;
+              }
+        }
+        @media screen and (max-width: 1023px) {
+            --height: 400px;
+        }
+        @media screen and (max-width: 768px) {
+            --marginTop:20px;
+            --height: 300px;
+            h5 {
+                font-size: 30px;
+            }
+        }
+        @media screen and (max-width: 468px) {
+            h5 {
+                font-size: 20px;
+            }
+        }
+        @media screen and (max-width: 374px) {
+            p {
+                font-size: 13px;
+            }
+        }
+        
+        
+        
+}

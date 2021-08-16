@@ -1,0 +1,16 @@
+@import "./helper/global";
+@import "./helper/mixin";
+@import "./helper/variables";
+
+// IMPORT COMPONENTS SCSS 
+
+@import "./components/Header.scss";
+@import "./components/Sidebar.scss";
+@import "./components/Banner.scss";
+@import "./components/Intro.scss";
+@import "./components/Product.scss";
+@import "./components/Thumbnail.scss";
+@import "./components//Story.scss"; 
+@import "./components/Issue.scss";
+@import "./components/Discover.scss";
+@import "./components/Footer.scss";

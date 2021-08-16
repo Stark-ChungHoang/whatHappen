@@ -1,0 +1,131 @@
+a {
+    text-decoration: none;
+    &:hover {
+        color:#ea4913 !important; 
+        
+    }
+}
+.article {
+    --fsH5: 50px;
+    --marginTop:140px;
+    --fsP: 20px;
+    --marginTopP: 45px;
+    --fsH5Yellow:45px;
+    --fsPYellow:16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #f96400;
+    h5 {
+        
+        font-size: var(--fsH5);
+        line-height: 1.2;
+        letter-spacing: 5px;
+        font-weight: bold;
+        margin-top: var(--marginTop);
+        text-transform: uppercase;
+        padding: 0 var(--fsP);
+    }
+    p {
+        padding: 0 var(--fsP);
+        max-width: 705px;
+        font-size: var(--fsP);
+        line-height: 1.3;
+        margin-top: var(--marginTopP);
+    }
+    &--discover {
+            color: #111111;
+    }
+    &--black {
+        color: #110e03;
+        h5 {
+            font-size: 45px;
+        }
+        p {
+            font-size: 16px;
+            text-align: center;
+        }
+        @media screen and (max-width: 767px) {
+            h5 {
+                font-size: 30px;
+            }
+       }
+       @media screen and (max-width: 374px) {
+                h5 {
+                    font-size: 20px;
+                }
+                p {
+                    font-size: 13px;
+                }
+       }
+    }
+    &--yellow {
+        color:#fcd32a;
+        h5 {
+            font-size: 45px;
+        }
+        p {
+            text-align: center;
+            font-size: 16px;
+            line-height: 30px;
+            max-width: 652px;
+        }
+        @media screen and (max-width: 767px) {
+                h5 {
+                    font-size: 30px;
+                }
+           }
+           @media screen and (max-width: 374px) {
+                    h5 {
+                        font-size: 20px;
+
+                    }
+                    p {
+                        font-size: 13px;
+                    }
+           }
+    }
+    @media screen and (max-width: 1023px) {
+        --marginTop:80px;
+        --marginTopP: 35px;
+    }
+    
+       @media screen and (max-width: 767px) {
+        --fsH5: 30px;
+        --marginTop:50px;
+        --marginTopP: 25px;
+       }
+       @media screen and (max-width: 374px) {
+        --fsH5: 20px;
+        --marginTop:50px;
+        --fsP: 16px;
+        --marginTopP: 15px;
+       }
+       
+    }
+    
+        button {
+            border: solid 3px #020001;
+            font-size: 23px;
+            line-height: 1.2;
+            color:#222222;
+            padding: 21px 36px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 400ms;
+            &:hover {
+                background-color: #f96400;
+                transform: scale(1.1);
+            }
+            @media screen and (max-width: 768px) {
+                padding: 15px 20px;
+            }
+            @media screen and (max-width: 476px) {
+                font-size: 16px;
+            }
+            
+        }
+        
+  
