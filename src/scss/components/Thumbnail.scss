@@ -15,6 +15,10 @@
             cursor: pointer;
             width: 100%;
             object-fit: cover;
+            transition: 400ms ease-in-out;
+            &:hover {
+                transform: translateY(-3%);
+            }
         }
         h5 {
             font-size: var(--fsH5);

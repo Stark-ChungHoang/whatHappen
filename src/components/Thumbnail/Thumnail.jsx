@@ -1,6 +1,5 @@
 import React from 'react'
 import {data} from "./data"
-import Icon from "../../img/img-06.png"
 import Icon2 from "../../img/hearticon.png"
 function Thumbnail() {
     return (

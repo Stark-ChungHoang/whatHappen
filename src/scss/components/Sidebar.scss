@@ -29,10 +29,16 @@
                             color: $clHeader;
                             padding:30px 50px;
                             font-size: 25px;
+                            font-weight: bold;
                             text-transform: uppercase;
-                            transition: 200ms;
+                            transition: 400ms ease-in-out;
                                 &:hover {
-                                    background-color: $bgIssueItems;
+                                    text-decoration: line-through;
+                                    background-image: linear-gradient( to right bottom,$bgIssue , $clProduct);
+                                    display: inline-block;
+                                    color: transparent;
+                                    -webkit-background-clip: text;
+                                    background-clip: text;
                                 }
                         }
                 }

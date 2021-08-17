@@ -1,4 +1,8 @@
 import React from 'react'
+import { motion } from "framer-motion"
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+import {useAnimation} from "framer-motion"
 import Icon1 from "../../img/window.png"
 import Icon2 from "../../img/img.png"
 import Icon3 from "../../img/object-05.png"
@@ -9,14 +13,31 @@ import Icon7 from "../../img/object-07.png"
 import Icon8 from "../../img/object-02.png"
 import Icon9 from "../../img/object-03.png"
 function Story() {
+    const animation = useAnimation()
+    const { ref, inView} = useInView({ threshold: 0.2,  });
+      useEffect(()=> {
+          if(inView) {
+              animation.start({
+                  scale: 1,
+                  transition: { type: 'spring', duration: 3,bounce:0.3,},
+              });
+          }
+          if(!inView) {
+              animation.start({  scale:0.7 })
+          }
+      },[inView,animation])
     return (
-        <section className="story">
+        <motion.section
+        ref={ref}
+        animate={animation}
+        className="story">
             <div className="article article--yellow">
                 <h5>Brand Story</h5>
                 <p>모바일에 최적화된 비디오를 단 몇 분 만에 제작해보세요. 디자이너가 아니더라도,  모든 팀에서
                         다듬을 수 있습니다. 브랜드의 성공을 위한 첫 걸음을  내딛어보세요. 비디오를 단 몇 분 만에 제작해보세요.</p>
             </div>
-            <div className="story__banner">
+            <div
+            className="story__banner">
                 <img src={Icon1} alt="" />
             </div>
             <div className="story__topLogo">
@@ -61,7 +82,7 @@ function Story() {
 
             </div>
 
-        </section>
+        </motion.section>
     )
 }
 

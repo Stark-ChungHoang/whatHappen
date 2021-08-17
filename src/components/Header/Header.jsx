@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 import IconLogo from "../../img/logo@3x.png"
 import { FaBars} from "react-icons/fa"
 export default function Header({click,handleClick}) {
     return (
         <header className="header">
                 <nav className="navbar">
-                    <div className="navbar__logo">
+                    <motion.div
+                        initial={{x:'-100vw'}}
+                        animate={{x:0}}
+                        transition={{type: 'spring', duration: 1,bounce:0.3,}}
+                    className="navbar__logo">
                     <Link to="abc"><img src={IconLogo} alt="" /></Link>
-                    </div>
+                    </motion.div>
                     <div className="navbar_icon">
                         <FaBars onClick={handleClick}  />
                     </div>

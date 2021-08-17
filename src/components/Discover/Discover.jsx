@@ -1,4 +1,8 @@
 import React from 'react'
+import { motion } from "framer-motion"
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+import {useAnimation} from "framer-motion"
 import Icon1 from "../../img/video.png"
 import Icon2 from "../../img/video-object-04.png"
 import Icon3 from "../../img/video-object-01.png"
@@ -9,8 +13,23 @@ import Icon7 from "../../img/video-object-05.png"
 import Icon8 from "../../img/video-object-07.png"
 import Icon9 from "../../img/video-object-06.png"
 function Discover() {
+    const animation = useAnimation()
+    const { ref, inView} = useInView({ threshold: 0.2,  });
+      useEffect(()=> {
+          if(inView) {
+              animation.start({
+                    scale: 1,
+                  transition: { type: 'spring', duration: 2,bounce:0.3,},
+              });
+          }
+          if(!inView) {
+              animation.start({  scale:0.7})
+          }
+      },[inView,animation])
     return (
-        <section className="discover">
+        <motion.section 
+        animate={animation}
+            ref={ref} className="discover">
                 <div className="article article--discover">
                     <h5>what happened</h5>
                     <p>How to create mobile-optimized videos in minutes. Not a designer, 
@@ -57,7 +76,7 @@ function Discover() {
                         </div>
 
                 </div>
-        </section>
+        </motion.section>
     )
 }
 

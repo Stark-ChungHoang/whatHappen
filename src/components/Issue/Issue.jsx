@@ -1,4 +1,8 @@
 import React from 'react'
+import { motion } from "framer-motion"
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+import {useAnimation} from "framer-motion"
 import Icon1 from "../../img/news-img-01.png"
 import Icon2 from "../../img/news-img-03.png"
 import Icon3 from "../../img/news-img-04.png"
@@ -10,8 +14,21 @@ import Icon8 from "../../img/news-object-04.png"
 import Icon9 from "../../img/news-object-05.png"
 import Icon10 from "../../img/img__person.png"
 function Issue() {
+    const animation = useAnimation()
+    const { ref, inView} = useInView({ threshold: 0.2,  });
+      useEffect(()=> {
+          if(inView) {
+              animation.start({
+                  x: 0,
+                  transition: { type: 'spring', duration: 2,bounce:0.3,},
+              });
+          }
+          if(!inView) {
+              animation.start({   x: '-100vw' })
+          }
+      },[inView,animation])
     return (
-        <section className="issue">
+        <section ref={ref} className="issue">
                 <div className="article article--black">
                     <h5>Happened’s issue</h5>
                     <p>모바일에 최적화된 비디오를 단 몇 분 만에 제작해보세요. 
@@ -21,19 +38,22 @@ function Issue() {
                          <div className="issue__button">
                              <button>SEE MORE</button></div> 
                 </div>
-                <div className="issue__img">
+                <motion.div
+                    animate={animation}
+                className="issue__img">
                         <div className="issue__img__top">
                                 <img src={Icon5} alt="" />
                         </div>
                         <div className="issue__img__bottom">
                                 <img src={Icon6} alt="" />
                         </div>
-                </div>
+                </motion.div>
                 <div className="issue__list">
                     <div className="issue__items">
                             <h5>whpn <br />issue </h5>
                             <img src={Icon1} alt="" />
-                            <div className="issue__items__logo">
+                            <div
+                            className="issue__items__logo">
                         <img src={Icon7} alt="" />
                     </div>
                     </div>
