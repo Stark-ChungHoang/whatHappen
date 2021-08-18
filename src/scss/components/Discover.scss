@@ -114,6 +114,12 @@
         @media screen and (max-width:1520px) {
             --height:1300px;
         }
+        @media screen and (max-width: 1279px) {
+                &__right,&__left {
+                    display: none;
+                }
+        }
+        
         @media screen and (max-width: 1023px) {
             --height: 800px;
             &__top, &__bottom, &__right,&__left,&__heart {

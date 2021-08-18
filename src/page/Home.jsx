@@ -50,8 +50,8 @@ function Home() {
     }
     return (
         <>
-                <Sidebar user={user} logout={logout} click={click} logoutSidebar={logoutSidebar} handleClick={handleClick} />
-                <Header user={user} logout={logout} click={click} handleClick={handleClick} />
+                <Sidebar user={user}  click={click} logoutSidebar={logoutSidebar} handleClick={handleClick} />
+                <Header user={user} logout={logout}  handleClick={handleClick} />
             <main>
                     <Banner />
                     <Intro />

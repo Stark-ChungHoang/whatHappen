@@ -11,7 +11,7 @@ export default function Header({handleClick,user,logout}) {
                         animate={{x:0}}
                         transition={{type: 'spring', duration: 1,bounce:0.3,}}
                     className="navbar__logo">
-                    <Link to="abc"><img src={IconLogo} alt="" /></Link>
+                    <Link to="/"><img src={IconLogo} alt="" /></Link>
                     </motion.div>
                     <div className="navbar_icon">
                         <FaBars onClick={handleClick}  />

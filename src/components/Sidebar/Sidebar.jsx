@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { MdCancel} from "react-icons/md"
-function Sidebar({click,handleClick,user,logout,logoutSidebar}) {
+function Sidebar({click,handleClick,user,logoutSidebar}) {
     return (
         <aside className={click ? "sidebar" : "sidebar__hidden"}>
                 <div className="sidebar__icon">
