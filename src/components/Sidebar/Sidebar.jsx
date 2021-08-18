@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { MdCancel} from "react-icons/md"
-function Sidebar({click,handleClick}) {
+function Sidebar({click,handleClick,user,logout,logoutSidebar}) {
     return (
         <aside className={click ? "sidebar" : "sidebar__hidden"}>
                 <div className="sidebar__icon">
@@ -13,7 +13,11 @@ function Sidebar({click,handleClick}) {
                                     <Link to=""><li className="sidebar__menu__items--li"> Introduction </li></Link>
                                     <Link to=""><li className="sidebar__menu__items--li"> solution </li></Link>
                                     <Link to=""><li className="sidebar__menu__items--li"> Rate plan </li></Link>
-                                    <Link to=""><li className="sidebar__menu__items--li"> login </li></Link>
+                                   {user ? 
+                                        ( <Link onClick={()=>logoutSidebar()} to="/" ><li className="sidebar__menu__items--li"> logout </li></Link>)
+                                        :
+                                        ( <Link to="/login"><li className="sidebar__menu__items--li"> login </li></Link>)
+                                }
                                      <Link to=""><li className="sidebar__menu__items--li"> Apply for free use </li></Link>
                             </ul>
         

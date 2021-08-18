@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import IconLogo from "../../img/logo@3x.png"
 import { FaBars} from "react-icons/fa"
-export default function Header({click,handleClick}) {
+export default function Header({handleClick,user,logout}) {
     return (
         <header className="header">
                 <nav className="navbar">
@@ -22,7 +22,11 @@ export default function Header({click,handleClick}) {
                                     <Link to=""><li className="navbar__menu__items--li"> Introduction </li></Link>
                                     <Link to=""><li className="navbar__menu__items--li"> solution </li></Link>
                                     <Link to=""><li className="navbar__menu__items--li"> Rate plan </li></Link>
-                                    <Link to=""><li className="navbar__menu__auth--li"> login </li></Link>
+                                   {user ? 
+                                    ( <Link to="/" onClick={() => logout()}><li className="navbar__menu__auth--li"> logout</li></Link>)
+                                    : 
+                                    ( <Link to="/login"><li className="navbar__menu__auth--li"> login </li></Link>)
+                                    }
                                      <Link to=""><li className="navbar__menu__auth--li"> Apply for free use </li></Link>
                             </ul>
         
