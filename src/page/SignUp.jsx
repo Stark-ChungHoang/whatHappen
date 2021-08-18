@@ -89,14 +89,14 @@ const { register, handleSubmit, formState: { errors } } = useForm(
   const onSubmit = data => {
      Swal.fire({
         icon: "success",
-        title: "SIGN IN SUCCESS",
+        title: "SIGN UP SUCCESS",
       }).then((res)=> {
           if(res.isConfirmed) {
-            history.push("/")
+            history.push("/login")
             return res
           }
       })
-      localStorage.setItem("signup",JSON.stringify(data))
+      
   };
   return (
     
