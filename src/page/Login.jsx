@@ -18,13 +18,15 @@ import * as yup from "yup";
 import { useHistory } from 'react-router'
 import Swal from "sweetalert2";
 import {Link as LinkR} from "react-router-dom"
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
             <Link color="inherit" href="/">
                 What Happen
-      </Link>{' '}
+            </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
         </Typography>
@@ -36,9 +38,9 @@ const useStyles = makeStyles((theme) => ({
         position: "relative",
         boxShadow: "rgba(0, 0, 0, 0.4) 0px 0px 10px",
         padding: " 30px ",
-        margin: '20px auto',
-        background: "white",
+        marginTop:`100px`,
         borderRadius: "10px",
+        
     },
     icon: {
         position: 'absolute',
@@ -70,7 +72,11 @@ const useStyles = makeStyles((theme) => ({
     },
     validate: {
         color: 'red',
+    },
+    link: {
+        color:"rgba(0, 0, 0, 0.54)",
     }
+
 }));
 
 export default function Login() {
@@ -100,6 +106,8 @@ export default function Login() {
     
 
     return (
+        <>
+        <Header />
         <Container className={classes.container} component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.icon}><LinkR to="/">X</LinkR></div>
@@ -154,7 +162,7 @@ export default function Login() {
                         
                         </Grid>
                         <Grid item>
-                            <LinkR to="signup" variant="body2">
+                            <LinkR className={classes.link} to="signup" variant="body2">
                                 {"Don't have an account? Sign Up"}
                             </LinkR>
                         </Grid>
@@ -165,6 +173,7 @@ export default function Login() {
                 <Copyright />
             </Box>
         </Container>
-
+        <Footer />
+        </>
     );
 }

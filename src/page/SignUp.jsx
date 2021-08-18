@@ -18,6 +18,8 @@ import * as yup from "yup";
 import { useHistory } from 'react-router'
 import Swal from "sweetalert2";
 import {Link as LinkR} from "react-router-dom"
+import Footer from '../components/Footer/Footer';
+import Header from '../components/Header/Header';
 
 function Copyright() {
   return (
@@ -38,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
         position: "relative",
         boxShadow: "rgba(0, 0, 0, 0.4) 0px 0px 10px",
         padding: " 30px ",
-       marginTop: "30px",
+       marginTop: "100px",
         background: "white",
         borderRadius: "10px",
     },
@@ -99,7 +101,8 @@ const { register, handleSubmit, formState: { errors } } = useForm(
       
   };
   return (
-    
+        <>
+        <Header />
           <Container className={classes.container} component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.icon}><LinkR to="/">X</LinkR></div>
@@ -191,6 +194,7 @@ const { register, handleSubmit, formState: { errors } } = useForm(
         <Copyright />
       </Box>
     </Container>
- 
+    <Footer />
+    </>
      );
 }
